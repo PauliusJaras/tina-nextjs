@@ -1,0 +1,81 @@
+name: Auto Merge to Other Branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global merge.ours.driver true
+
+      - name: Checkout to main-kaunas
+        run: |
+          git checkout main-kaunas
+
+      - name: Ensure .gitattributes exists
+        run: |
+          cat .gitattributes
+
+      - name: Merge to main-kaunas
+        run: |
+          git fetch origin main
+          git merge origin/main --no-edit || true
+          # Resolve conflicts if any
+          git checkout --ours . || true
+          git add . || true
+          git commit -m "Automatically resolved conflicts" || echo "No conflicts"
+          git push origin main-kaunas
+
+      - name: Checkout to main-vilnius
+        run: |
+          git checkout main-vilnius
+
+      - name: Ensure .gitattributes exists
+        run: |
+          cat .gitattributes
+
+      - name: Merge to main-vilnius
+        run: |
+          git fetch origin main
+          git merge origin/main --no-edit || true
+          # Resolve conflicts if any
+          git checkout --ours . || true
+          git add . || true
+          git commit -m "Automatically resolved conflicts" || echo "No conflicts"
+          git push origin main-vilnius
+
+      - name: Checkout to main-klaipeda
+        run: |
+          git checkout main-klaipeda
+
+      - name: Ensure .gitattributes exists
+        run: |
+          cat .gitattributes
+
+      - name: Merge to main-klaipeda
+        run: |
+          git fetch origin main
+          git merge origin/main --no-edit || true
+          # Resolve conflicts if any
+          git checkout --ours . || true
+          git add . || true
+          git commit -m "Automatically resolved conflicts" || echo "No conflicts"
+          git push origin main-klaipeda

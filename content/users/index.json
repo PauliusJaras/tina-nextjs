@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "name": "Laura",
+      "email": "laura@jmac.lt",
+      "username": "jmac_laura",
+      "password": {
+        "value": "X_W!Bdc+)8&]U2ek",
+        "passwordChangeRequired": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+---
+title: Test Drive
+img: 'https://tinacmsbucket.s3.eu-north-1.amazonaws.com/forms/fyrhjulsdrift.jpg'
+imgAlt: Registracija bandomajam važiavimui
+body: >
+  ## REGISTRACIJA BANDOMAJAM VAŽIAVIMUI
+
+
+  SUBARU ypatingas tuo, kad visada kelia neprilygstamą pasitikėjimą. Tai itin
+  malonus jausmas, apimantis dėl retai sutinkamos darnos – nuoseklios dinamiškų
+  savybių pusiausvyros, genialaus dizaino ir ramybę užtikrinančio saugumo.
+
+
+  **Kada vyks jūsų bandomasis važiavimas?**
+form:
+  fields:
+    - name: Automobilio modelis
+      label: Automobilio modelis
+      type: select
+      customValidity: Šis laukelis privalomas
+      options:
+        - label: Solterra
+          option: Solterra
+        - label: Crosstrek
+          option: Crosstrek
+        - label: Forester
+          option: Forester
+        - label: Outback
+          option: Outback
+        - label: Kita
+          option: Kita (nurodyti komentaruose)
+      required: true
+      placeholder: ''
+    - name: Vardas
+      label: ''
+      type: text
+      customValidity: Šis laukelis privalomas
+      required: true
+    - name: Pavardė
+      label: ''
+      type: text
+      customValidity: Šis laukelis privalomas
+      required: true
+    - name: Elektroninis paštas
+      type: email
+      required: true
+    - name: Telefono Numeris
+      label: ''
+      type: tel
+      required: true
+      placeholder: Telefono numeris
+      pattern: ''
+    - name: Pastabos
+      label: ''
+      type: textarea
+      placeholder: Jūsų pastabos ir komentarai
+  warningText: 'Pateikdami duomenis sutinkate, kad su jumis susisiektų JMA Centras atstovai.'
+  buttonText: Registruotis
+emailDetails:
+  subject: Registracija Bandomajam Važiavimui
+  replyEmailMessage:
+    topText: >-
+      Sveiki,
+
+
+      Dėkojame, kad užpildėte registracijos formą mūsų tinklapyje.
+      Artimiausiomis valandomis susisieksime su Jumis dėl bandomojo važiavimo.
+
+
+      Jūsų patogumui apačioje pateikiame gauto užklausimo santrauką:
+    bottomText: "DĖMESIO!\_Bandomieji važiavimai atliekami UAB \"JMA centras\" automobilių salono darbo metu.\n\nPagarbiai, Oficialusis SUBARU atstovas Lietuvoje\n\nUAB \"JMA centras\"\nVerkių g. 39B, Vilnius\nTel. (8-5) 273 17 35\_\nFaks. (8-5) 210 30 61\nEl. paštas:\_salonas@subaruvilnius.lt"
+---
+
