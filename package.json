@@ -54,7 +54,7 @@
     "react-youtube": "^10.1.0",
     "sharp": "^0.33.4",
     "swiper": "^11.1.4",
-    "tinacms": "^1.5.24",
+    "tinacms": "^3.4.1",
     "tinacms-authjs": "^1.0.1",
     "tinacms-gitprovider-github": "^1.0.0",
     "transliteration": "^2.3.5",
